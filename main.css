@@ -41,4 +41,11 @@ a:active {
     color: pink;
     background-color: green;
 }
+a {
+    text-shadow: 4px 2px 0.5px pink;
+    transition: 2s;
+}
+a:hover {
+    transition: 0.3s;
+}
 
