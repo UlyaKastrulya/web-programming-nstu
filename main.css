@@ -11,6 +11,12 @@ header {
     padding: 10px;
     font-size: 32px;
 }
+header:hover {
+    font-size: large;   
+}
+header:active {
+    color: violet;
+}
 
 footer {
     background: linear-gradient(to right, blue, purple,lightblue);
@@ -19,6 +25,12 @@ footer {
     padding: 10px;
     font-style: italic; 
     text-align: right;
+}
+footer:hover {
+    font-size: large;
+}
+footer:active {
+    color: violet;
 }
 
 a {
