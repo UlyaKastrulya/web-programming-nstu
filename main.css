@@ -11,9 +11,11 @@ header {
     padding: 10px;
     font-size: 32px;
 }
+
 header:hover {
     font-size: large;   
 }
+
 header:active {
     color: violet;
 }
@@ -26,9 +28,11 @@ footer {
     font-style: italic; 
     text-align: right;
 }
+
 footer:hover {
     font-size: large;
 }
+
 footer:active {
     color: violet;
 }
@@ -36,6 +40,8 @@ footer:active {
 a {
     text-decoration: none;
     color: green;
+    text-shadow: 4px 2px 0.5px pink;
+    transition: 2s;
 }
 
 a:visited {
@@ -47,17 +53,11 @@ a:hover {
     text-decoration: underline;
     background-color: white;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 a:active {
     color: pink;
     background-color: green;
-}
-a {
-    text-shadow: 4px 2px 0.5px pink;
-    transition: 2s;
-}
-a:hover {
-    transition: 0.3s;
 }
 
