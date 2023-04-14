@@ -46,6 +46,7 @@ a {
 
 a:visited {
     color: black;
+    transition: 3s;
 }
 
 a:hover {
@@ -53,7 +54,8 @@ a:hover {
     text-decoration: underline;
     background-color: white;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 3s;
+    transform: scale(1.6);
 }
 
 a:active {
