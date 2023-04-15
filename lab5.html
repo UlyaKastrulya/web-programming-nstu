@@ -58,6 +58,28 @@
             output.style.color = textColor;
             output.style.borderColor = borderColor;
         }
+
+        function cartSum () {
+            let appleCost = 100;
+            let grushaCost = 80;
+            let orangeCost = 150;
+            let dinCost = 300;
+
+            let inputApple = document.getElementById('inputApple');
+            let inputGru = document.getElementById('inputGrusha');
+            let inputOrange = document.getElementById('inputOrange');
+            let inputDin = document.getElementById('inputDin');
+
+            console.log(inputApple);
+            console.log(inputApple.value);
+
+            let cartSumResult = inputApple.value * appleCost + inputGru.value * grushaCost + inputOrange.value * orangeCost + inputDin.value * dinCost;
+
+            console.log(cartSumResult);
+
+            let cartSumText = document.getElementById('cartSum');
+            cartSumText.innerHTML = `Общая цена: ${cartSumResult} р`;
+        }
     </script>
     <style>
         .message {
@@ -75,6 +97,24 @@
             border: 1px solid;
             width: 300px;
             height: 40px;
+        }
+        
+        .cart {
+            padding-right: 24px;
+            padding-left: 24px;
+            padding-top: 6px;
+            padding-bottom: 20px;
+            border-radius: 24px;
+            border: none;
+            background-color: white;
+            color: black;
+            width: 300px;
+            margin-top: 56px;
+
+        }
+
+        .item {
+            display: block;
         }
     </style>
 </head>
@@ -98,6 +138,18 @@
             <input type="button" value="Кнопка 4" onclick="changeOutPut(4, 'black', 'lime', 'pink')">
 
             <div id="output"></div>
+        </div>
+
+        <div class="cart">
+            <h1>Корзина товаров</h1>
+            <div>
+                <label class="item">Яблоки (100р/шт):<br><input type="number" id="inputApple"></label><br>
+                <label class="item">Груши (80р/шт):<br><input type="number" id="inputGrusha"></label><br>
+                <label class="item">Апельсины (150р/шт):<br><input type="number" id="inputOrange"></label><br>
+                <label class="item">Дыни (300р/шт):<br><input type="number" id="inputDin"></label><br>
+            </div>
+            <input style="margin-bottom: 12px; margin-top: 12px;" type="button" value="Рассчитать" onclick="cartSum()">
+            <div id="cartSum">Общая цена: 0р</div>
         </div>
 
     </main>
