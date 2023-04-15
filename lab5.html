@@ -6,13 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лабораторная работа 5</title>
     <link rel="stylesheet" href="main.css">
+    <script>
+        
+        function showSum() {
+            let a = 5154;
+            let b = 7891;
+            let result = a + b;
+            alert(`Сумма ${a} и ${b} равна ${result}`);
+        }
+        
+    </script>
+    <style>
+        .message {
+            padding: 12px;
+            display: inline-block;
+            border: 1px solid black;
+            background-color: beige;
+            font-size: 25px;
+            vertical-align: middle;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
         НГТУ, ФБ, Лабораторная работа 5
     </header>
     <main>
-        div
+        <div class="message" onclick="showSum()">"Сколько будет 5154+7891?</div>
+        <div class="message">Узнать,кто авторы страницы</div>
 
     </main>
     <footer>
@@ -20,4 +43,4 @@
     </footer>
 </body>
 </html>
-
+
