@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 5</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function showSum() {
+            let inputA = document.getElementById('numA');
+            let inputB = document.getElementById('numB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a + b;
+            alert(`Сумма ${a} и ${b} равна ${result}`);
+        }
+
+        function showDif() {
+            let inputA = document.getElementById('numA');
+            let inputB = document.getElementById('numB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert(`Разность ${a} и ${b} равна ${result}`);
+        }
+
+        function showMult() {
+            let inputA = document.getElementById('numA');
+            let inputB = document.getElementById('numB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert(`Произведение ${a} и ${b} равно ${result}`);
+        }
+
+        function showDiv() {
+            let inputA = document.getElementById('numA');
+            let inputB = document.getElementById('numB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert(`Деление ${a} на ${b} равно ${result}`);
+        }
+
+        function showAuthor() {
+            let author = "Овчинникова Ю.А., Маглицкий М.А.";
+            alert(`Здравствуйте! Вы просматриваете нашу лабораторную работу.\nАвторы страницы:\n${author}`);
+        }
+        function changeOutPut(buttonNum, backColor, textColor, borderColor) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderColor = borderColor;
+        }
+
+        function cartSum () {
+            let appleCost = 100;
+            let grushaCost = 80;
+            let orangeCost = 150;
+            let dinCost = 300;
+
+            let inputApple = document.getElementById('inputApple');
+            let inputGru = document.getElementById('inputGrusha');
+            let inputOrange = document.getElementById('inputOrange');
+            let inputDin = document.getElementById('inputDin');
+
+            console.log(inputApple);
+            console.log(inputApple.value);
+
+            let cartSumResult = inputApple.value * appleCost + inputGru.value * grushaCost + inputOrange.value * orangeCost + inputDin.value * dinCost;
+
+            console.log(cartSumResult);
+
+            let cartSumText = document.getElementById('cartSum');
+            cartSumText.innerHTML = `Общая цена: ${cartSumResult} р`;
+        }
+    </script>
+    <style>
+        .message {
+            padding: 12px;
+            display: inline-block;
+            border: 1px solid black;
+            background-color: beige;
+            font-size: 25px;
+            vertical-align: middle;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
+        
+        .cart {
+            padding-right: 24px;
+            padding-left: 24px;
+            padding-top: 6px;
+            padding-bottom: 20px;
+            border-radius: 24px;
+            border: none;
+            background-color: white;
+            color: black;
+            width: 300px;
+            margin-top: 56px;
+
+        }
+
+        .item {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+    <main>
+        <label>Введите первое число:<input type="number" value="5154" id="numA"></label><br>
+        <label>Введите второе число:<input type="number" value="7891" id="numB"></label><br>
+        <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showDif()">Найти разность чисел</div>
+        <div class="message" onclick="showMult()">Найти произведение чисел</div>
+        <div class="message" onclick="showDiv()">Найти деление чисел</div>
+        <div class="message" onclick="showAuthor()">Узнать,кто авторы страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutPut(1, 'red', 'yellow', 'white')">
+            <input type="button" value="Кнопка 2" onclick="changeOutPut(2, 'black', 'lime', 'pink')">
+            <input type="button" value="Кнопка 3" onclick="changeOutPut(3, 'red', 'yellow', 'white')">
+            <input type="button" value="Кнопка 4" onclick="changeOutPut(4, 'black', 'lime', 'pink')">
+
+            <div id="output"></div>
+        </div>
+
+        <div class="cart">
+            <h1>Корзина товаров</h1>
+            <div>
+                <label class="item">Яблоки (100р/шт):<br><input type="number" id="inputApple"></label><br>
+                <label class="item">Груши (80р/шт):<br><input type="number" id="inputGrusha"></label><br>
+                <label class="item">Апельсины (150р/шт):<br><input type="number" id="inputOrange"></label><br>
+                <label class="item">Дыни (300р/шт):<br><input type="number" id="inputDin"></label><br>
+            </div>
+            <input style="margin-bottom: 12px; margin-top: 12px;" type="button" value="Рассчитать" onclick="cartSum()">
+            <div id="cartSum">Общая цена: 0р</div>
+        </div>
+
+    </main>
+    <footer onc>
+        &copy; Овчинникова Юлия, ФБИ-12, 2 курс, 2023; Маглицкий Михаил, ФБИ-12, 2 курс, 2023
+    </footer>
+</body>
+</html>
+
