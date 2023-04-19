@@ -70,16 +70,40 @@
             let inputOrange = document.getElementById('inputOrange');
             let inputDin = document.getElementById('inputDin');
 
-            console.log(inputApple);
-            console.log(inputApple.value);
-
             let cartSumResult = inputApple.value * appleCost + inputGru.value * grushaCost + inputOrange.value * orangeCost + inputDin.value * dinCost;
-
-            console.log(cartSumResult);
 
             let cartSumText = document.getElementById('cartSum');
             cartSumText.innerHTML = `Общая цена: ${cartSumResult} р`;
         }
+
+        // Создание кругов
+
+        function spawnCircles() {
+            let count = (document.getElementById('circlesCount')).value;
+            let main = document.querySelector('main');
+
+            for (let i = 1; i <= count; i++) {
+                // генератор случайного цвета
+                let rgb = [];
+                rgb.push(Math.floor(Math.random() * 255));
+                rgb.push(Math.floor(Math.random() * 255));
+                rgb.push(Math.floor(Math.random() * 255));
+                let color = (`rgb(${rgb})`);
+
+                let circleDiv = document.createElement("div");
+
+                circleDiv.innerHTML += i;
+                circleDiv.classList.add('circle');
+                circleDiv.style.backgroundColor = color;
+                circleDiv.addEventListener("click", function() {
+                    this.style.opacity = '0';
+                });
+
+                main.append(circleDiv);
+            }
+        }
+    
+
     </script>
     <style>
         .message {
@@ -116,6 +140,29 @@
         .item {
             display: block;
         }
+
+        .circle {
+            padding: 12px;
+            color: black;
+            border-radius: 56px;
+            width: 42px;
+            text-align: center;
+            vertical-align: center;
+            font-size: 40px;
+            font-style: bold;
+            margin-bottom: 24px;
+            align-items: center;
+            border: 2px solid #000;
+            margin-right: 24px;
+            transition: 1s;
+            display: inline-block;
+        }
+
+        .circle:last-child {
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+
     </style>
 </head>
 <body>
@@ -143,14 +190,19 @@
         <div class="cart">
             <h1>Корзина товаров</h1>
             <div>
-                <label class="item">Яблоки (100р/шт):<br><input type="number" id="inputApple"></label><br>
-                <label class="item">Груши (80р/шт):<br><input type="number" id="inputGrusha"></label><br>
-                <label class="item">Апельсины (150р/шт):<br><input type="number" id="inputOrange"></label><br>
-                <label class="item">Дыни (300р/шт):<br><input type="number" id="inputDin"></label><br>
+                <label class="item">Яблоки (100р/шт):<br><input style="width: 100%;" type="number" id="inputApple"></label><br>
+                <label class="item">Груши (80р/шт):<br><input style="width: 100%;" type="number" id="inputGrusha"></label><br>
+                <label class="item">Апельсины (150р/шт):<br><input style="width: 100%;" type="number" id="inputOrange"></label><br>
+                <label class="item">Дыни (300р/шт):<br><input style="width: 100%;" type="number" id="inputDin"></label><br>
             </div>
             <input style="margin-bottom: 12px; margin-top: 12px;" type="button" value="Рассчитать" onclick="cartSum()">
             <div id="cartSum">Общая цена: 0р</div>
         </div>
+
+        <h2>Скрытие кругов</h2>
+        <label class="item">Введите число кругов:<input type="number" id="circlesCount"></label>
+        <input style="margin-top: 12px; margin-bottom: 32px;" type="button" value="Разместить" onclick="spawnCircles()">
+        <br>
 
     </main>
     <footer onc>
