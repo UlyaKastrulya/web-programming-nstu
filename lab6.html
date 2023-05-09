@@ -6,27 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лабораторная работа 6</title>
     <link rel="stylesheet" href="main.css">
-
     <script>
         let number;
         let count = 0;
+
         function startGame() {
-        number = Math.floor (Math.random() * 100) + 1;
-        let screens = document.getElementsByClassName ('game');
-        screens[0].style.display = 'none';
-        screens[1].style.display = 'block';
+            number = Math.floor (Math.random() * 100) + 1;
+            console.log(number);
+            let screens = document.getElementsByClassName ('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
         }
-        function guess () {
+
+        function guess() {
             count++;
             let input = document.getElementById('user-number');
             let userNumber = parseInt(input.value);
             let message = document.getElementById('result');
-            if (userNumber > number) {
+            if (userNumber > 100) {
+                message.innerHTML = 'Ага, ты ещё миллион сюда вбей, умник! Загаданное число меньше или равно 100';
+            }
+
+            else if (userNumber < 0) {
+                message.innerHTML = 'Ну давай и отрицательные тоже перебирать щас будем! Загаданное число больше или равно 0';
+            }
+
+            else if (userNumber > number) {
                 message.innerHTML = 'Слишком большое число :(';
             }
+
             else if (userNumber < number) {
                 message.innerHTML = 'Слишком маленькое число :(';
             }
+
             else {
                 let screens = document.getElementsByClassName ('game');
                 screens[1].style.display = 'none';
@@ -34,10 +46,23 @@
                 document.getElementById ('number').innerHTML = number;
                 document.getElementById('try-count').innerHTML = count;
             }
-            function again(params) {
-
-            }
         }
+
+        function again() {
+            let screens = document.getElementsByClassName ('game');
+            screens[1].style.display = 'block';
+            screens[2].style.display = 'none';
+            count = 0;
+            number = Math.floor (Math.random() * 100) + 1;
+            console.log(number);
+            
+            let input = document.getElementById('user-number');
+            input.value = null;
+
+            let message = document.getElementById('result');
+            message.innerHTML = null;
+        }
+            
     </script>
 </head>
 <body>
