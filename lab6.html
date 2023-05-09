@@ -78,6 +78,37 @@
             }
         }
 
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'white';
+                document.getElementById('color').innerHTML = 'красный';
+            }
+
+            else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                div.style.color = 'green';
+                document.getElementById('color').innerHTML = 'черный';
+            }
+
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'purple';
+                div.style.color = 'pink';
+                document.getElementById('color').innerHTML = 'фиолетовый';
+            }
+
+            else if (div.style.backgroundColor == 'purple') {
+                div.style.backgroundColor = 'white';
+                div.style.color = 'black';
+                document.getElementById('color').innerHTML = 'белый';
+            }
+
+            else {
+                div.style.backgroundColor = 'yellow';
+                document.getElementById('color').innerHTML = 'жёлтый';
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -124,6 +155,13 @@
                     <li>Если вы угадаете число, игра выдаст соответствующее уведомление. Если нет - попробуйте ещё раз</li>
                     <li>Если хотите сыграть ещё, нажмите кнопку "Сыграть ещё раз"</li>
                 </ol>
+            </div>
+        </div>
+
+        <div class="colorBlock" ondblclick="changeColor(this)">
+            <div>
+                Цвет: <span id="color">жёлтый</span><br>
+                Сделайте двойной щелчок, чтобы сменить цвет.
             </div>
         </div>
     </main>
