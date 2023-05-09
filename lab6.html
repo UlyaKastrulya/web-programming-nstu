@@ -109,6 +109,35 @@
             }
         }
 
+        let switcher = true;
+        function moveBlock(div) {
+            
+            if (switcher == true) {
+                div.style.left = '92%';
+                div.style.transform = 'rotate(4turn)';
+                console.log('слева');
+                switcher = false
+            }
+            else if (switcher == false) {
+                div.style.left = 0;
+                div.style.transform = 'rotate(0)';
+                console.log('справа');
+                switcher = true
+            }
+        }
+
+        let width = 100;
+        function expand(div) {
+            if (width >= 1000) {
+                div.style.width = '100px';
+                width = 100;
+            }
+            else {
+                width += 50;
+                div.style.width = (width + 'px');
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -164,6 +193,10 @@
                 Сделайте двойной щелчок, чтобы сменить цвет.
             </div>
         </div>
+
+        <div class="movingBlock" onclick="moveBlock(this)">Щёлкни меня!</div>
+
+        <div class="expand" onclick="expand(this)">Я расширяюсь</div>
     </main>
     <footer>
         &copy; Овчинникова Юлия, ФБИ-12, 2 курс, 2023; Маглицкий Михаил, ФБИ-12, 2 курс, 2023
