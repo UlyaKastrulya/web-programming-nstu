@@ -6,13 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <title>Лабораторная работа 7</title>
+    <style>
+        .numblock {
+            padding: 12px;
+            background-color: #fff;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            width: 120px;
+        }
+
+        .numblock:last-child {
+            margin-bottom: 0;
+        }
+        
+        .numblock:first-child {
+            margin-top: 12px;
+        }
+    </style>
+    <script>
+        function addBlocks () {
+            let blocks = document.getElementById ('blocks');
+            for (let i = 0; i < 10; i++) {
+                let block = document.createElement('div');
+                block.classList.add('numblock');
+                block.innerHTML = 'Блок №' + (i+1) + ':'+ (2 * i**2);
+                blocks.appendChild (block);
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
         НГТУ, ФБ, Лабораторная работа 6
     </header>
     <main>
-
+    <button onclick="addBlocks()">Создать блоки</button>
+    <div id="blocks"></div>
     </main>
     <footer>
         &copy; Овчинникова Юлия, ФБИ-12, 2 курс, 2023; Маглицкий Михаил, ФБИ-12, 2 курс, 2023
