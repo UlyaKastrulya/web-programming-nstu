@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>допы</title>
+    <script>
+        function first() {
+            let enter = 412576;
+
+            let len = ('' + enter).length;
+            let number = '' + enter;
+            let splitted = number.split('');
+
+            let firstitem = splitted[0];
+            splitted.push(firstitem);
+            splitted.shift();
+            
+            let output = 0;
+            for (let i = 0; i < len; i++) {
+                output += splitted[i];
+            }
+            alert(parseInt(output));
+        }
+
+        first()
+
+    </script>
+</head>
+<body>
+    текст
+</body>
+</html>
