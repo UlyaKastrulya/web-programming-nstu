@@ -25,7 +25,7 @@
     </style>
     <script>
         function addBlocks () {
-            let blocks = document.getElementById ('blocks');
+            let blocks = document.getElementById('blocks');
             for (let i = 0; i < 10; i++) {
                 let block = document.createElement('div');
                 block.classList.add('numblock');
@@ -37,7 +37,14 @@
         function showEx() {
             let exchange = [73.6307, 72.7923, 72.8949, 71.5763, 70.8924, 
                             70.5991, 70.3847, 70.0414, 70.1217, 70.5174]
-
+            let table = document.getElementById('dollar-exhange');
+            for (let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
         }
     </script>
 </head>
