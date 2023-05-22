@@ -101,6 +101,52 @@
             }
             container.appendChild(table);
         }
+
+        let day = ['03.05.2023', '04.05.2023', '05.05.2023', '08.05.2023', '10.05.2023', '11.05.2023', '12.05.2023','14.05.2023',
+        '16.05.2023','18.05.2023'];
+        let value = [65.27, 65.21, 64.12, 63.27, 65.08, 64.19, 64.24, 66.2, 66.3, 70.64];
+    
+        function tableFilling() {
+          let table = document.getElementById('pricetable');
+    
+          for (i = 0; i < day.length; i++) {
+            let row = document.createElement('tr');
+            let dayCell = document.createElement('td');
+            dayCell.innerHTML = day[i];
+            table.appendChild(row);
+            row.appendChild(dayCell);
+    
+            let valueCell = document.createElement('td');
+            valueCell.innerHTML = value[i];
+            row.appendChild(valueCell);
+          }
+        }
+    
+        function Caluculating() {
+          let minDiv = document.getElementById('minprice');
+          let maxDiv = document.getElementById('maxprice');
+          let sDiv = document.getElementById('S');
+          minDiv.innerHTML = (Math.min(...value));
+          maxDiv.innerHTML = (Math.max(...value));
+    
+          let summ = 0;
+          for (let i = 0; i < value.length; i++) {
+            summ = summ + value[i];
+          }
+          let E = summ / value.length;
+    
+          let xiE2 = 0;
+          for (let i = 0; i < value.length; i++) {
+            xiE2 = xiE2 + (value[i] - E) ** 2;
+          }
+    
+          let S = Math.round((Math.sqrt((xiE2) / value.length)) * 1000) / 1000;
+    
+          sDiv.innerHTML = (S);
+        } 
+    
+        tableFilling();
+        Caluculating();
     </script>
 </head>
 <body>
@@ -122,6 +168,12 @@
     <div id="circleContainer"></div>
     <button onclick="TableNumber()">Таблица умножения на 40</button>
     <div id="multi"></div>
+
+    <button onclick="tableFilling(), onclick=Caluculating()">Акции конмании "Ростелеком"</button>
+    <table id="pricetable" border="1"></table>
+    <div id="minprice">Минимальное значение:</div>
+    <div id="maxprice">Максимальное значение:</div>
+    <div id="S">Среднее: </div>
     </main>
     <footer>
         &copy; Овчинникова Юлия, ФБИ-12, 2 курс, 2023; Маглицкий Михаил, ФБИ-12, 2 курс, 2023
