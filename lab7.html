@@ -84,13 +84,13 @@
                 container.appendChild(circle);
             }
         }
-        function TableNumber () {
+        function TableNumber() {
             let table = document.createElement('table');
             let container = document.getElementById('multi')
             for (let i = 13; i <= 33; i++) {
                 let row = document.createElement('tr');
                 let numberCell = document.createElement('td');
-                numberCell.innerText = i;
+                numberCell.innerText = (`${i} * 40 = `);
                 row.appendChild(numberCell);
                 let resultCell = document.createElement('td');
                 let multiResult = i * 40;
@@ -101,7 +101,6 @@
             }
             container.appendChild(table);
         }
-        TableNumber ()
     </script>
 </head>
 <body>
@@ -121,6 +120,7 @@
     <input type="number" id="circleInput" value="5" placeholder="Введите число кругов">
     <button id="redButton" onclick="Circles()">Красное/Зеленое</button>
     <div id="circleContainer"></div>
+    <button onclick="TableNumber()">Таблица умножения на 40</button>
     <div id="multi"></div>
     </main>
     <footer>
