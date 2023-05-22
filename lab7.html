@@ -57,6 +57,19 @@
                 blocks.appendChild(blockCreate);
             }
         }
+        function Circles() {
+            let circleInput = document.getElementById('circleInput');
+            let redButton = document.getElementById('redButton');
+            let container = document.getElementById('circleContainer');
+            let circleCount = parseInt(circleInput.value);
+            for (let i = 0; i < circleCount; i++) {
+                let circle = document.createElement('div');
+                circle.style.width = '120px';
+                circle.style.height = '120px';
+                circle.style.borderRadius = '200px'
+                container.appendChild(circle);
+            }
+        }
     </script>
 </head>
 <body>
@@ -72,6 +85,10 @@
 
     <button onclick="OpacityBlocks()">Создать полупрозрачные блоки</button>
     <div id="transparent-blocks"></div>
+
+    <input type="number" id="circleInput" value="5" placeholder="Введите число кругов">
+    <button id="redButton" onclick="Circles()">Красное/Зеленое</button>
+    <div id="circleContainer"></div>
     </main>
     <footer>
         &copy; Овчинникова Юлия, ФБИ-12, 2 курс, 2023; Маглицкий Михаил, ФБИ-12, 2 курс, 2023
