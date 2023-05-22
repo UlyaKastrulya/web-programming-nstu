@@ -46,6 +46,17 @@
                 table.appendChild(tr);
             }
         }
+        function OpacityBlocks() {
+            let blocks = document.getElementById('transparent-blocks');
+            for (let i = 0; i < 10; i++) {
+                let blockCreate = document.createElement('div');
+                blockCreate.style.opacity = (i * 10) + '%';
+                blockCreate.style.width = '100px';
+                blockCreate.style.height = '100px';
+                blockCreate.style.backgroundColor = 'blue';
+                blocks.appendChild(blockCreate);
+            }
+        }
     </script>
 </head>
 <body>
@@ -58,6 +69,9 @@
 
     <button onclick="showEx()">Курс доллара</button>
     <table border="1" id="dollar-exhange"></table>
+
+    <button onclick="OpacityBlocks()">Создать полупрозрачные блоки</button>
+    <div id="transparent-blocks"></div>
     </main>
     <footer>
         &copy; Овчинникова Юлия, ФБИ-12, 2 курс, 2023; Маглицкий Михаил, ФБИ-12, 2 курс, 2023
