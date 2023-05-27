@@ -38,6 +38,14 @@
         button:hover {
             background-color: dimgrey;
         }
+
+        #time {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            color:black;
+            font-size: 24px;
+        }
     </style>
 </head>
 <body onload="showDate()">
@@ -45,6 +53,7 @@
         НГТУ, ФБ, Лабораторная работа 6
     </header>
     <main>
+        <div id="time">00/00/00</div>
         <h2>Локали</h2>
         <div id="current-date"></div>
         <h2>Дни с даты рождения</h2>

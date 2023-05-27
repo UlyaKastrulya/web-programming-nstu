@@ -38,3 +38,11 @@ function showDaysCount() {
     let birthday = new Date((document.querySelector('input[type=date]')).value);
     out.innerHTML = `Количество дней с момента рождения: ${Math.floor((today - birthday) / 86400000)}`;
 }
+
+function ShowTime() {
+    let today = new Date();
+    let currentTime = today.toLocaleTimeString('ru-RU');
+    document.getElementById('time').innerHTML = currentTime;
+}
+setInterval(ShowTime, 1000);
+
