@@ -31,3 +31,10 @@ function showDate() {
     date_block_id.innerHTML = `Локаль в Индонезии: ${(new Date()).toLocaleString('id')}`;
     out.appendChild(date_block_id);
 }
+
+function showDaysCount() {
+    let out = document.getElementById('result');
+    let today = new Date();
+    let birthday = new Date((document.querySelector('input[type=date]')).value);
+    out.innerHTML = `Количество дней с момента рождения: ${Math.floor((today - birthday) / 86400000)}`;
+}
